@@ -385,10 +385,8 @@ template {
   text-decoration: none;
   color: black;
   padding: 1rem 0;
-  font-weight: bold;
   font-size: 1.2rem;
   font-family: Tahoma;
-  text-transform: uppercase;
   transition: 0.5s;
 }
 .nav__link:hover {
@@ -398,10 +396,149 @@ template {
   margin: 0;
   text-align: center;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 4rem;
+  font-family: sans-serif;
   text-decoration: overline;
   letter-spacing: 2px;
   position: relative;
   top: 20%;
-  transform: translateY(-20%);
+}
+.nav__title::selection {
+  background-color: #fdeded;
+}
+.nav .wrappin {
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.nav .another-one {
+  width: 30px;
+  height: 50px;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  animation-name: frame;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  background: linear-gradient(#ccc, #ccc) padding-box, linear-gradient(to bottom, black 50%, white 50%) border-box;
+  background-size: 100% 200%;
+}
+@keyframes frame {
+  100% {
+    background-position: 0 -100%;
+  }
+}
+.nav .another-one::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  top: 515px;
+  left: 50%;
+  border-radius: 5px;
+  background-color: black;
+  margin-left: -2.5px;
+  animation-name: ball;
+  animation-duration: 1.4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes ball {
+  100% {
+    top: 550px;
+    opacity: 0.3;
+    height: 0;
+    background-color: white;
+  }
+}
+.nav .another-one .arrows {
+  position: relative;
+  top: 60px;
+  left: 7px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 0.3rem;
+  transform: rotate(45deg);
+  animation-name: mid;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes mid {
+  50% {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+  }
+}
+.nav .another-one .arrows::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  padding: 0.3rem;
+  animation-name: uperr;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes uperr {
+  0% {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+  }
+}
+.nav .another-one .arrows::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 0.3rem;
+  animation-name: low;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes low {
+  100% {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+.section-images {
+  margin: 2rem 0;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+.img-container__wrap-one {
+  transform: scale(0.7);
+  overflow: hidden;
+}
+.img-container__wrap-two {
+  overflow: hidden;
+}
+.img-container__wrap-three {
+  transform: scale(0.7);
+  overflow: hidden;
+}
+.img-container__pic {
+  filter: blur(3px) grayscale(100%);
+  transition: transform 1s, filter 2s;
+}
+.img-container__pic:hover {
+  filter: blur(0);
+  transform: scale(1.2);
+}
+.img-container__title {
+  font-size: 1.8rem;
 }

@@ -1,6 +1,4 @@
 .nav {
-    // display: flex;
-    // align-items: flex-start;
     background-image: url(https://source.unsplash.com/1200x700/);
     background-position: center;
     background-size: cover;
@@ -52,10 +50,10 @@
         text-decoration: none;
         color: black;
         padding: 1rem 0;
-        font-weight: bold;
+        // font-weight: bold;
         font-size: 1.2rem;
         font-family: Tahoma;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         transition: 0.5s;
 
         &:hover {
@@ -67,11 +65,113 @@
         margin: 0;
         text-align: center;
         text-transform: uppercase;
-        font-size: 3rem;
+        font-size: 4rem;
+        font-family: sans-serif;
         text-decoration: overline;
         letter-spacing: 2px;     
         position: relative;
         top: 20%;
-        transform: translateY(-20%);
+
+        &::selection {
+            background-color: rgb(253, 237, 237);
+        }
+    }
+
+    .wrappin {
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    
+    .another-one {
+        width: 30px;
+        height: 50px;
+        border: 2px solid transparent;
+        border-radius: 1rem;
+        animation-name: frame;
+        animation-duration: 1.4s;
+        animation-iteration-count: infinite;  
+        animation-timing-function: ease-in;
+        background: linear-gradient(#ccc, #ccc) padding-box,
+        linear-gradient(to bottom, black 50%, white 50%) border-box;
+        background-size: 100% 200%;
+
+        @keyframes frame {
+            100%{background-position: 0 -100%;}
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            top: 515px;
+            left: 50%;
+            border-radius: 5px;
+            background-color: black;
+            margin-left: -2.5px;
+            animation-name: ball;
+            animation-duration: 1.4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes ball {
+            100% {top: 550px; opacity: 0.3; height: 0; background-color: white}
+        }
+
+        .arrows {
+            position: relative;
+            top: 60px;
+            left: 7px;
+            border: solid black;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 0.3rem;
+            transform: rotate(45deg);
+            animation-name: mid;
+            animation-duration: 1.4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            @keyframes mid {
+                50% { border: solid white; border-width: 0 2px 2px 0;}
+            }
+        
+            &::before {
+                content: '';
+                position: absolute;
+                top: -8px;
+                left: -8px;
+                border: solid black;
+                border-width: 0 2px 2px 0;
+                padding: 0.3rem;
+                animation-name: uperr;
+                animation-duration: 1.4s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            @keyframes uperr {
+                0%{ border: solid white; border-width: 0 2px 2px 0;}
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 8px;
+                left: 8px;
+                border: solid black;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 0.3rem;
+                animation-name: low;
+                animation-duration: 1.4s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                @keyframes low {
+                    100% { border: solid white; border-width: 0 2px 2px 0;}
+                }
+            }
+        }
     }
 }
