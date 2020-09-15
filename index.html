@@ -9,13 +9,10 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" id="nav">
         <div class="nav__wrap">
-            <div class="nav__brand">
-                <a class="nav__brand-link" href="#!">
-                    <img class="nav__logo" src="https://source.unsplash.com/50x50/">
-                </a>
-                <p class="nav__name">some name</p>
+            <!-- Empty div for nav  -->
+            <div class="nav__empty-div">
             </div>
             <ul class="nav__list">
                 <li class="nav__item">
@@ -35,13 +32,25 @@
                 </li>
             </ul>
         </div>
+
+        <!-- Hamburger Menu Animation -->
+        <div class="nav__mobile">
+            <!-- Js toggler -->
+            <span class="nav__toggle" onclick="toggle()">&#9776;</span>
+        </div>
+
         <h1 class="nav__title">Some title</h1>
     
-        <!-- Another One -->
+        <!-- Mouse Scroll Animation -->
         <div class="wrappin">
             <div class="another-one">
                 <div class="arrows"></div>
             </div>
+        </div>
+
+        <!-- Slide top animation -->
+        <div class="slider-top" onscroll="scroll()">
+            <a href="#nav" class="slider-top__border"></a>
         </div>
     </nav>
     
@@ -70,8 +79,7 @@
         </section>
 
 
-    </main>
-    
+</main>
     
     <!-- JS Script -->
     <script src="js/app.js"></script>
