@@ -8,8 +8,7 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-    width: 100%;
-    
+    width: 100%;    
 
     &__wrap {
         display: flex;
@@ -64,9 +63,8 @@ html {
             bottom: 10px;
             left: 0;
             background-color: white;
-            width: 90%;
+            width: 100%;
             height: 2px;
-            transform-origin: center;
             transform: scaleX(0);
             transition: transform 0.5s;
         }
@@ -83,22 +81,68 @@ html {
         border: 2px solid transparent;
         border-radius: 8px;
         padding: 0.2rem 0.4rem;
-        // background: linear-gradient(#ccc, #ccc) padding-box,
-        // linear-gradient(to right, black 50%, white 50%) border-box;
-        // background-size: 200% 100%;
         animation-name: mobileMenu;
         animation-duration: 4s;
-        // animation-direction: alternate;
         animation-delay: 1s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
 
+        &::before {
+            content: '';
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            width: 62%;
+            height: 2px;
+            background-color: black;
+        }
+
+        &:focus::before {
+            transform: rotate(225deg);
+            top: 15px;
+            background-color: white;
+            transition: transform 1s, background-color 500ms;
+            // animation-name: topBar;
+            // animation-duration: 1.5s;
+            // animation-iteration-count: 1;
+            // animation-direction: alternate;
+    
+            // @keyframes topBar { 
+            //     100% {top: 15px; background-color: white}
+            // }         
+        }
+        
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 7px;
+            width: 62%;
+            height: 2px;
+            background-color: black;
+        }
+
+        &:focus::after {
+            transform: rotate(-225deg);
+            bottom: 16px;
+            background-color: white;
+            transition: transform 1s, background-color 500ms;
+            // animation-name: botBar;
+            // animation-duration: 1.5s;
+            // animation-iteration-count: 1;
+
+            // @keyframes botBar {
+            //     100% {transform: rotate(-225deg); bottom: 15px; background-color: white}
+            // }
+        }
+        
         @keyframes mobileMenu {
             0% {border-top-color: white;}
             33% {border-right-color: white;}
             66% {border-bottom-color: white}
             100% {border-left-color: white;}
-            }
+        }
 
         @media screen and (min-width: 550px) {
             display: none;
@@ -106,9 +150,26 @@ html {
     }
 
     &__toggle {
-        font-size: 1.8rem;
-        cursor: pointer;
+        font-size: 1.5rem;
+        position: relative;
+        color: black;
+
+        &:focus {
+            animation-name: midBar;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            
+            @keyframes midBar {
+                100% {opacity: 0}
+            }
+        }
+
     }
+
+    // &__toggle {
+    //     font-size: 1.8rem;
+    //     cursor: pointer;
+    // }
 
     &__title{
         margin: 0;
@@ -132,7 +193,7 @@ html {
     }
 
     .wrappin {
-        height: 76%;
+        height: 75%;
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -206,6 +267,7 @@ html {
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
             }
+
             @keyframes uperr {
                 0%{ border: solid white; border-width: 0 2px 2px 0;}
             }
