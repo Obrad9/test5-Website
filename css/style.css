@@ -421,44 +421,35 @@ html {
   position: absolute;
   top: 10px;
   right: 10px;
+  width: 40px;
+  height: 38px;
+  text-align: center;
   border: 2px solid transparent;
   border-radius: 8px;
-  padding: 0.2rem 0.4rem;
   animation-name: mobileMenu;
   animation-duration: 4s;
   animation-delay: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-.nav__mobile::before {
-  content: "";
-  position: absolute;
-  top: 7px;
-  right: 7px;
-  width: 62%;
+.nav__mobile .bar {
+  position: relative;
+  display: inline-block;
+  width: 50%;
   height: 2px;
   background-color: black;
 }
-.nav__mobile:focus::before {
-  transform: rotate(225deg);
-  top: 15px;
-  background-color: white;
-  transition: transform 1s, background-color 500ms;
+.nav__mobile .one {
+  top: -3px;
+  transform: rotate(0);
 }
-.nav__mobile::after {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  left: 7px;
-  width: 62%;
-  height: 2px;
-  background-color: black;
+.nav__mobile .two {
+  top: -13px;
+  transform: rotate(0);
 }
-.nav__mobile:focus::after {
-  transform: rotate(-225deg);
-  bottom: 16px;
-  background-color: white;
-  transition: transform 1s, background-color 500ms;
+.nav__mobile .three {
+  bottom: 23px;
+  transform: rotate(0);
 }
 @keyframes mobileMenu {
   0% {
@@ -477,21 +468,6 @@ html {
 @media screen and (min-width: 550px) {
   .nav__mobile {
     display: none;
-  }
-}
-.nav__toggle {
-  font-size: 1.5rem;
-  position: relative;
-  color: black;
-}
-.nav__toggle:focus {
-  animation-name: midBar;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-}
-@keyframes midBar {
-  100% {
-    opacity: 0;
   }
 }
 .nav__title {
