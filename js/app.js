@@ -6,14 +6,14 @@ const midBar = document.querySelector('.nav__toggle');
 const one = document.querySelector('.one');
 const two = document.querySelector('.two');
 const three = document.querySelector('.three');
+const wrappin = document.querySelector('.wrappin');
 
 const nav = document.querySelector(".nav__wrap");
 
 function toggle() {
     if (nav.style.display == "block") {
         nav.style.display = "none"
-        title.style.opacity = "1"
-        mobileNav.style.animationDuration = '2s';
+        title.style.display = "block"
         one.style.top = '-3px';
         one.style.transform = "rotate(0)";
         one.style.width = '50%';
@@ -28,13 +28,12 @@ function toggle() {
         three.style.transition = 'transform 1s';
         three.style.width = '50%';
         three.style.bottom = '23px';
-
+        wrappin.style.height = '87%';
     } else {
-        nav.style.display = "block"
-        title.style.opacity = "0.3"
-        mobileNav.style.animationDuration = '0s';
+        nav.style.display = "block";
+        title.style.display = "none";
         nav.style.display = 'block';
-        one.style.top = '0';
+        one.style.top = '5px';
         one.style.width = '70%';
         one.style.transition = 'transform 1s';
         one.style.transform = "rotate(315deg)";
@@ -45,7 +44,8 @@ function toggle() {
         three.style.transform = "rotate(-315deg)";
         three.style.width = '70%';
         three.style.transition = 'transform 1s';
-        three.style.bottom = '36px';
+        three.style.bottom = '31px';
+        wrappin.style.height = '44%';
     }
 }
 
@@ -55,5 +55,7 @@ window.onscroll = function() {scroll()};
 function scroll() {
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         sliderTop.style.display = "block";
+    } else {
+        sliderTop.style.display = "none";
     } 
 }

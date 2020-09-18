@@ -392,6 +392,12 @@ html {
   flex: 1;
   text-align: center;
 }
+@media screen and (max-width: 550px) {
+  .nav__item:hover {
+    transition: 250ms;
+    background-color: rgba(150, 149, 149, 0.4);
+  }
+}
 .nav__link {
   position: relative;
   display: block;
@@ -416,6 +422,14 @@ html {
 }
 .nav__link:hover::after {
   transform: scaleX(1);
+}
+@media screen and (max-width: 550px) {
+  .nav__link::after {
+    background-color: transparent;
+  }
+  .nav__link:hover {
+    color: #e7e7e7;
+  }
 }
 .nav__mobile {
   position: absolute;
@@ -496,7 +510,12 @@ html {
   justify-content: center;
   align-items: flex-end;
 }
-.nav .another-one {
+@media screen and (max-width: 550px) {
+  .nav .wrappin {
+    height: 87%;
+  }
+}
+.nav .mouse-scroll {
   position: relative;
   width: 30px;
   height: 50px;
@@ -514,7 +533,7 @@ html {
     background-position: 0 -100%;
   }
 }
-.nav .another-one::before {
+.nav .mouse-scroll::before {
   content: "";
   position: absolute;
   width: 7px;
@@ -537,7 +556,7 @@ html {
     background-color: white;
   }
 }
-.nav .another-one .arrows {
+.nav .mouse-scroll .arrows {
   position: relative;
   top: 60px;
   left: 7px;
@@ -557,7 +576,7 @@ html {
     border-width: 0 2px 2px 0;
   }
 }
-.nav .another-one .arrows::before {
+.nav .mouse-scroll .arrows::before {
   content: "";
   position: absolute;
   top: -8px;
@@ -576,7 +595,7 @@ html {
     border-width: 0 2px 2px 0;
   }
 }
-.nav .another-one .arrows::after {
+.nav .mouse-scroll .arrows::after {
   content: "";
   position: absolute;
   top: 8px;

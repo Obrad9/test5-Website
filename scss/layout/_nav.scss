@@ -44,6 +44,12 @@ html {
         list-style: none;
         flex: 1;
         text-align: center;
+        @media screen and (max-width: 550px) {
+            &:hover {
+                transition: 250ms;
+                background-color: rgba(150, 149, 149, 0.4);
+            }
+        }
     }
 
     &__link {
@@ -72,6 +78,15 @@ html {
         &:hover::after {
             transform: scaleX(1);
         }
+
+        @media screen and (max-width: 550px) {
+            &::after {
+                background-color: transparent;
+            }
+            &:hover {
+                color: rgb(231, 231, 231);
+            }
+        }
     }
 
     &__mobile {
@@ -83,7 +98,6 @@ html {
         text-align: center;
         border: 2px solid transparent;
         border-radius: 8px;
-        // padding: 0.2rem 0.4rem;
         animation-name: mobileMenu;
         animation-duration: 4s;
         animation-delay: 1s;
@@ -96,7 +110,6 @@ html {
             width: 50%;
             height: 2px;
             background-color: black;
-            
         }
 
         .one {
@@ -113,57 +126,6 @@ html {
             bottom: 23px;
             transform: rotate(0);
         }
-
-        // &::before {
-        //     content: '';
-        //     position: absolute;
-        //     top: 7px;
-        //     right: 7px;
-        //     width: 62%;
-        //     height: 2px;
-        //     background-color: black;
-        //     transform: rotate(0);
-        //     transition: transform 1s, background-color 500ms;
-        // }
-
-        // &:focus::before {
-        //     transform: rotate(225deg);
-        //     top: 16px;
-        //     background-color: white;
-        //     transition: transform 1s, background-color 500ms;
-        //     // animation-name: topBar;
-            // animation-duration: 1.5s;
-            // animation-iteration-count: 1;
-            // animation-direction: alternate;
-    
-            // @keyframes topBar { 
-            //     100% {top: 15px; background-color: white}
-            // }         
-        // }        
-
-        // &::after {
-        //     content: '';
-        //     position: absolute;
-        //     bottom: 5px;
-        //     left: 7px;
-        //     width: 62%;
-        //     height: 2px;
-        //     background-color: black;
-        // }
-
-        // &:focus::after {
-        //     transform: rotate(-225deg);
-        //     bottom: 15px;
-        //     background-color: white;
-        //     transition: transform 1s, background-color 500ms;
-            // animation-name: botBar;
-            // animation-duration: 1.5s;
-            // animation-iteration-count: 1;
-
-            // @keyframes botBar {
-            //     100% {transform: rotate(-225deg); bottom: 15px; background-color: white}
-            // }
-        // }
         
         @keyframes mobileMenu {
             0% {border-top-color: white;}
@@ -176,27 +138,6 @@ html {
             display: none;
         }
     }
-
-    // &__toggle {
-    //     font-size: 1.5rem;
-    //     position: relative;
-    //     color: black;
-
-    //     &:focus {
-    //         animation-name: midBar;
-    //         animation-duration: 1.5s;
-    //         animation-iteration-count: infinite;
-            
-    //         @keyframes midBar {
-    //             100% {opacity: 0}
-    //         }
-    //     }
-    // }
-
-    // &__toggle {
-    //     font-size: 1.8rem;
-    //     cursor: pointer;
-    // }
 
     &__title{
         margin: 0;
@@ -224,9 +165,13 @@ html {
         display: flex;
         justify-content: center;
         align-items: flex-end;
+
+        @media screen and (max-width: 550px) {
+            height: 87%;    
+        }
     }
     
-    .another-one {
+    .mouse-scroll {
         position: relative;
         width: 30px;
         height: 50px;
